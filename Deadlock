@@ -1,0 +1,22 @@
+-- Welcome to the Kingdom of SQL! Let's track the Princess' sessions and their wait statuses.
+-- Query for blocked sessions (deadlock candidates), now featuring Princesses and Knights!
+
+SELECT 
+    -- The "BlockedSessionID" is like the Princess trapped in a tower (blocked and waiting for rescue).
+    r.session_id AS PrincessInTheTower, 
+    
+    -- The "BlockingSessionID" is the Knight blocking the Princess' path (the one causing the wait).
+    r.blocking_session_id AS BraveKnightBlockingPath,
+    
+    -- The "RequestStatus" is the status of our Princess, whether she's trapped or free.
+    r.status AS PrincessStatus,
+    
+    -- The "WaitType" is the reason the Princess is waiting—perhaps a dragon or a locked door!
+    r.wait_type AS EnchantedBarrier,
+    
+    -- The "WaitTime" is how long the Princess has been waiting for the Knight to save her.
+    r.wait_time AS TimeSpentInTheTower
+
+-- Only look at those Princesses that are stuck in the tower, waiting for a Knight to rescue them.
+FROM sys.dm_exec_requests r
+WHERE r.blocking_session_id <> 0;  -- Exclude Princesses who are already free
