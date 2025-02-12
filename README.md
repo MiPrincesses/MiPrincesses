@@ -1,4 +1,5 @@
-## Hi there 👋
+## Hi there! I welcome thee from a distant kingdom
+
 A magical world of princesses, fantasy, and adventure!
 
 📖 About the Project
