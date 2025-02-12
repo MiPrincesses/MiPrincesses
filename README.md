@@ -1,4 +1,4 @@
-## Hi there! I welcome thee from a distant kingdom
+## Hi there! I welcome thee from a distant kingdom.
 
 A magical world of princesses, fantasy, and adventure!
 
